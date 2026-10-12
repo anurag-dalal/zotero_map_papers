@@ -1,0 +1,61 @@
+<vbox id="cp-prefs">
+	<groupbox>
+		<label><html:h2>Graph</html:h2></label>
+		<hbox align="center">
+			<label value="Color theme:" control="cp-pref-theme"/>
+			<menulist id="cp-pref-theme" preference="extensions.zotero.mappapers.theme">
+				<menupopup>
+					<menuitem value="meadow" label="Meadow (classic)"/>
+					<menuitem value="midnight" label="Midnight"/>
+					<menuitem value="dracula" label="Dracula"/>
+					<menuitem value="viridis" label="Viridis"/>
+					<menuitem value="sunset" label="Sunset"/>
+					<menuitem value="ocean" label="Ocean"/>
+					<menuitem value="mono" label="Monochrome"/>
+					<menuitem value="solarized" label="Solarized dark"/>
+				</menupopup>
+			</menulist>
+		</hbox>
+		<hbox align="center">
+			<label value="Color nodes by:" control="cp-pref-colorby"/>
+			<menulist id="cp-pref-colorby" preference="extensions.zotero.mappapers.colorBy">
+				<menupopup>
+					<menuitem value="year" label="Publication year"/>
+					<menuitem value="relation" label="Relation to the origin paper"/>
+				</menupopup>
+			</menulist>
+		</hbox>
+		<hbox align="center">
+			<label value="Papers in the graph:" control="cp-pref-size"/>
+			<menulist id="cp-pref-size" preference="extensions.zotero.mappapers.graphSize">
+				<menupopup>
+					<menuitem value="20" label="20"/>
+					<menuitem value="30" label="30"/>
+					<menuitem value="40" label="40"/>
+					<menuitem value="60" label="60"/>
+					<menuitem value="80" label="80"/>
+				</menupopup>
+			</menulist>
+		</hbox>
+		<html:p style="max-width: 46em; line-height: 1.5; opacity: 0.75;">
+			You can also change these from the toolbar of the graph window.
+		</html:p>
+	</groupbox>
+	<groupbox>
+		<label><html:h2>OpenAlex</html:h2></label>
+		<html:p style="max-width: 46em; line-height: 1.5;">
+			Paper data comes from OpenAlex. Without a key you get about 1,000 requests a day
+			(a graph uses around 10). A free key from openalex.org raises the limit.
+		</html:p>
+		<hbox align="center">
+			<label value="API key (optional):" control="cp-pref-apikey"/>
+			<html:input type="password" id="cp-pref-apikey" style="width: 22em"
+				preference="extensions.zotero.mappapers.apiKey"/>
+		</hbox>
+		<hbox align="center">
+			<label value="Contact email (optional):" control="cp-pref-mailto"/>
+			<html:input type="email" id="cp-pref-mailto" style="width: 22em"
+				preference="extensions.zotero.mappapers.mailto"/>
+		</hbox>
+	</groupbox>
+</vbox>

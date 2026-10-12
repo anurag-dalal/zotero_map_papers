@@ -1,0 +1,17 @@
+{
+  "addons": {
+    "map-papers@anurag.zotero": {
+      "updates": [
+        {
+          "version": "1.0.0",
+          "update_link": "https://github.com/anurag/zotero-map-papers/releases/download/v1.0.0/map-papers-1.0.0.xpi",
+          "applications": {
+            "zotero": {
+              "strict_min_version": "7.0"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

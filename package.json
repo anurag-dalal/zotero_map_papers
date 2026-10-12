@@ -1,0 +1,22 @@
+{
+  "name": "zotero-map-papers",
+  "version": "1.0.0",
+  "description": "Zotero plugin: Map Papers-style similarity graph, prior works and derivative works for any item",
+  "private": true,
+  "type": "module",
+  "homepage": "https://github.com/anurag/zotero-map-papers",
+  "scripts": {
+    "build": "node scripts/check.mjs && node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "node scripts/test-core.mjs",
+    "test:live": "node scripts/test-core.mjs --live",
+    "dev": "node scripts/dev.mjs",
+    "dev:clean": "rm -rf .dev",
+    "clean": "rm -rf build",
+    "smoke": "node scripts/smoke-test.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT"
+}

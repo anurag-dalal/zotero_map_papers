@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html windowtype="mappapers:graph">
+<head>
+	<meta charset="utf-8">
+	<title>Map Papers</title>
+	<link rel="stylesheet" href="chrome://mappapers/content/graph/graph.css">
+</head>
+<body>
+	<header id="toolbar">
+		<div class="nav">
+			<button id="back" class="icon-btn" title="Back (Alt+←)" disabled>‹</button>
+			<button id="forward" class="icon-btn" title="Forward (Alt+→)" disabled>›</button>
+		</div>
+		<div class="brand">
+			<img src="chrome://mappapers/content/icons/icon.svg" alt="">
+			<span>Map Papers</span>
+		</div>
+		<div class="search-wrap">
+			<input id="search" type="search" placeholder="Search a title, DOI or OpenAlex ID…" autocomplete="off">
+			<div id="search-results" hidden></div>
+		</div>
+		<nav id="tabs" role="tablist">
+			<button class="tab" data-tab="graph" role="tab">Graph</button>
+			<button class="tab" data-tab="prior" role="tab">Prior works</button>
+			<button class="tab" data-tab="derivative" role="tab">Derivative works</button>
+		</nav>
+		<div class="spacer"></div>
+		<label class="ctl">Theme <select id="theme"></select></label>
+		<label class="ctl">Color <select id="color-by">
+			<option value="year">by year</option>
+			<option value="relation">by relation</option>
+		</select></label>
+		<label class="ctl">Papers <select id="graph-size">
+			<option>20</option><option>30</option><option>40</option><option>60</option><option>80</option>
+		</select></label>
+	</header>
+
+	<div id="origin-bar" hidden>
+		<span class="origin-label">Origin</span>
+		<span id="origin-title"></span>
+		<span id="status" aria-live="polite"></span>
+	</div>
+
+	<main id="main" data-tab="graph">
+		<aside id="list-panel">
+			<div class="panel-head">
+				<input id="list-filter" type="search" placeholder="Filter graph papers…">
+				<select id="list-sort" title="Sort">
+					<option value="similarity">Similarity</option>
+					<option value="citations">Citations</option>
+					<option value="year">Newest</option>
+					<option value="title">Title</option>
+				</select>
+			</div>
+			<div id="list" role="listbox"></div>
+		</aside>
+
+		<section id="center">
+			<div id="graph-view">
+				<canvas id="canvas"></canvas>
+				<div id="legend"></div>
+				<div id="zoom-ctl">
+					<button class="icon-btn" id="zoom-in" title="Zoom in">+</button>
+					<button class="icon-btn" id="zoom-out" title="Zoom out">−</button>
+					<button class="icon-btn" id="zoom-fit" title="Fit (F)">⤢</button>
+				</div>
+				<div id="tooltip" hidden></div>
+			</div>
+			<div id="table-view" hidden>
+				<div class="table-head">
+					<div id="table-title"></div>
+					<div class="seg" id="scope"></div>
+					<div class="spacer"></div>
+					<label class="ctl">Sort by <select id="table-sort"></select></label>
+				</div>
+				<p id="table-note"></p>
+				<div id="table-scroll">
+					<table id="table">
+						<thead><tr></tr></thead>
+						<tbody></tbody>
+					</table>
+					<div id="table-more"></div>
+				</div>
+			</div>
+			<div id="overlay" hidden>
+				<div class="overlay-card">
+					<div class="spinner"></div>
+					<div id="overlay-msg"></div>
+					<div id="overlay-actions"></div>
+				</div>
+			</div>
+		</section>
+
+		<aside id="details"></aside>
+	</main>
+	<script src="chrome://mappapers/content/graph/graph.js"></script>
+</body>
+</html>

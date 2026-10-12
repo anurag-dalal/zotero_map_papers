@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Map Papers",
+  "version": "1.0.0",
+  "description": "Explore a similarity graph of related papers, plus prior and derivative works, for any item in your library.",
+  "author": "Anurag",
+  "homepage_url": "https://github.com/anurag/zotero-map-papers",
+  "icons": {
+    "48": "content/icons/icon.svg",
+    "96": "content/icons/icon.svg"
+  },
+  "applications": {
+    "zotero": {
+      "id": "map-papers@anurag.zotero",
+      "update_url": "https://raw.githubusercontent.com/anurag/zotero-map-papers/main/update.json",
+      "strict_min_version": "7.0",
+      "strict_max_version": "10.*"
+    }
+  }
+}
